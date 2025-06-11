@@ -1,0 +1,21 @@
+/* bussinga! */
+.disclaimer {
+  display: none;
+}
+* {
+  transition: 250ms;
+}
+body {
+  font-family: Lexend, Arial, sans-serif;
+  color: #dddddd;
+  background-color: #181818;
+}
+input, button {
+  font-family: Lexend, Arial, sans-serif;
+  color: #dddddd;
+  background: transparent;
+  box-shadow: none;
+}
+button:hover {
+  background-color: #222;
+}
