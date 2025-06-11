@@ -35,17 +35,36 @@ button:hover {
   background-color: #444444;
 }
 
+.query {
+  width: 15vw;
+}
+
 .results {
   width: 100%;
+  padding-left: 5px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .results > div {
+  position: relative;
   display: flex;
   gap: 5px;
   align-items: center;
+}
+.results > div::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -5px;
+  width: 2px;
+  height: 100%;
+  background: var(--color);
 }
 img {
   width: 50px;
   height: 50px;
   object-fit: contain;
+}
+.results > div > div {
+  width: 100%;
 }
