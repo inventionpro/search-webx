@@ -12,18 +12,21 @@ body {
   width: 50vw;
   margin: auto;
   font-family: Lexend, Arial, sans-serif;
-  color: #dddddd;
+  color: #ddd;
   background-color: #181818;
 }
 h1, h2, h3, h4, h5, h6, p, a, ul, ol {
   margin: 0px;
 }
+a {
+  color: #7ad;
+}
 input, button {
   font-family: Lexend, Arial, sans-serif;
-  color: #dddddd;
+  color: #ddd;
   padding: 5px;
   margin: 2px;
-  border: 2px #dddddd solid;
+  border: 2px #ddd solid;
   background: transparent;
   box-shadow: none;
 }
@@ -32,7 +35,7 @@ button {
   transition: background 250ms;
 }
 button:hover {
-  background-color: #444444;
+  background-color: #444;
 }
 
 .query {
