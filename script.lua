@@ -9,11 +9,11 @@ function search()
     if window ~= nil then
         for i, s in ipairs(res) do
             html = html .. '<div style="--color:' .. s.color .. '">' .. (#s.favicon>0 and ('<img src="' .. s.favicon .. '" onerror="this.remove()">') or "") ..
-                '<div><a href="buss://' .. s.url .. '">' .. (s.quality and "⭐" or "") .. s.title .. '</a><p>' .. s.desc .. '</p></div></div>'
+                '<div><a href="buss://' .. s.url .. '">' .. (s.quality and '⭐' or '') .. (#s.title>0 and s.title or s.url) .. '</a><p>' .. s.desc .. '</p></div></div>'
         end
     else
         for i, s in ipairs(res) do
-            html = html .. s.url .. ' > ' .. (s.quality and "⭐" or "") .. s.title .. '\n' .. s.desc .. '\n'
+            html = html .. (s.quality and '⭐' or '') .. (#s.title>0 and (s.title .. '(' .. s.url .. ')') or s.url) .. (#s.desc>0 and ('\n' .. s.desc) or '') .. '\n'
         end
     end
     get('results').set_contents(html)
