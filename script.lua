@@ -13,7 +13,7 @@ function search()
         end
     else
         for i, s in ipairs(res) do
-            html = html .. (s.quality and '⭐' or '') .. (#s.title>0 and (s.title .. '(' .. s.url .. ')') or s.url) .. (#s.desc>0 and ('\n' .. s.desc) or '') .. '\n'
+            html = html .. (s.quality and '⭐' or '') .. (#s.title>0 and (s.title .. ' (' .. s.url .. ')') or s.url) .. (#s.desc>0 and ('\n' .. s.desc) or '') .. '\n'
         end
     end
     get('results').set_contents(html)
