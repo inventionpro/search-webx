@@ -6,9 +6,15 @@ function search()
         body = ''
     })
     local html = ''
-    for i, s in ipairs(res) do
-        html = html .. '<div style="--color:' .. s.color .. '">' .. (#s.favicon>0 and ('<img src="' .. s.favicon .. '" onerror="this.remove()">') or "") ..
-            '<div><a href="buss://' .. s.url .. '">' .. (s.quality and "⭐" or "") .. s.title .. '</a><p>' .. s.desc .. '</p></div></div>'
+    if window ~= nil then
+        for i, s in ipairs(res) do
+            html = html .. '<div style="--color:' .. s.color .. '">' .. (#s.favicon>0 and ('<img src="' .. s.favicon .. '" onerror="this.remove()">') or "") ..
+                '<div><a href="buss://' .. s.url .. '">' .. (s.quality and "⭐" or "") .. s.title .. '</a><p>' .. s.desc .. '</p></div></div>'
+        end
+    else
+        for i, s in ipairs(res) do
+            html = html .. s.url .. ' > ' .. (s.quality and "⭐" or "") .. s.title .. '\n' .. s.desc .. '\n'
+        end
     end
     get('results').set_contents(html)
 end
