@@ -9,7 +9,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50vw;
+  width: 50dvw;
+  min-width: min(500px, 100dvw);
   margin: auto;
   font-family: Lexend, Arial, sans-serif;
   color: #ddd;
@@ -40,6 +41,7 @@ button:hover {
 
 .query {
   width: 15vw;
+  min-width: min(200px, 100dvw);
 }
 
 .results {
