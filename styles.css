@@ -76,3 +76,7 @@ img {
 .results > div > div {
   width: 100%;
 }
+
+.small {
+  font-size: 12px;
+}
