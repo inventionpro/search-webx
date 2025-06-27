@@ -8,9 +8,9 @@ function search()
         body = ''
     })
     local html = ''
-    if (res.extra.type=='math') {
+    if res.extra.type=='math' then
         html = '<div class="extra-math">'+query+'='+res.extra.value+'</div>'
-    }
+    end
     if window ~= nil then
         for i, s in ipairs(res.results) do
             html = html .. '<div style="--color:' .. s.color .. '">' .. (#s.favicon>0 and ('<img src="' .. s.favicon .. '" onerror="this.remove()">') or "") ..
