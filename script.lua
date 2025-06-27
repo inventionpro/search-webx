@@ -9,7 +9,7 @@ function search()
     })
     local html = ''
     if res.extra.type=='math' then
-        html = '<div class="extra-math">'+query+'='+res.extra.value+'</div>'
+        html = '<div class="extra-math">' .. query .. '=' .. res.extra.value .. '</div>'
     end
     if window ~= nil then
         for i, s in ipairs(res.results) do
