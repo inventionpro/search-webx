@@ -1,11 +1,16 @@
 function search()
+    local query = get('query').get_contents()
+    local str = string.gsub(query, "%+", "%%2B")
     local res = fetch({
-        url = "https://api.fsh.plus/buss?new=true&q=" .. get('query').get_contents(),
+        url = "https://api.fsh.plus/buss?new=true&q=" .. str,
         method = "GET",
         headers = { ["Content-Type"] = "application/json" },
         body = ''
     })
     local html = ''
+    if (res.extra.type=='math') {
+        html = '<div class="extra-math">'+query+'='+res.extra.value+'</div>'
+    }
     if window ~= nil then
         for i, s in ipairs(res.results) do
             html = html .. '<div style="--color:' .. s.color .. '">' .. (#s.favicon>0 and ('<img src="' .. s.favicon .. '" onerror="this.remove()">') or "") ..
