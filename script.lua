@@ -11,8 +11,8 @@ function search()
     if res.extra.type=='math' then
         html = '<div class="extra-math">' .. query .. ' = ' .. res.extra.value .. '</div>'
     end
-    if res.extra.type=='wiki' then
-        html = '<div class="extra-wiki">' .. res.extra.value .. '</div>'
+    if res.extra.type=='dictionary' then
+        html = '<div class="extra-dictionary">' .. res.extra.value .. '</div>'
     end
     if window ~= nil then
         for i, s in ipairs(res.results) do
