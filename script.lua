@@ -14,6 +14,9 @@ function search()
     if res.extra.type=='dictionary' then
         html = '<div class="extra-dictionary">' .. res.extra.value .. '</div>'
     end
+    if res.extra.type=='translate' then
+        html = '<div class="extra-translate">' .. res.extra.value .. '</div>'
+    end
     if window ~= nil then
         for i, s in ipairs(res.results) do
             html = html .. '<div style="--color:' .. s.color .. '">' .. (#s.favicon>0 and ('<img src="' .. s.favicon .. '" onerror="this.remove()">') or "") ..
