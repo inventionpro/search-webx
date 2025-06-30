@@ -3,7 +3,7 @@
   display: none;
 }
 * {
-  transition: none;
+  transition: none !important;
 }
 body {
   display: flex;
@@ -39,9 +39,13 @@ button:hover {
   background-color: #444;
 }
 
+row-input {
+  direction: row;
+}
+
 .query {
-  width: 15vw;
-  min-width: min(200px, 100dvw);
+  width: 20vw;
+  min-width: min(250px, 100dvw);
 }
 
 .results {
@@ -85,6 +89,6 @@ img {
   width: fit-content;
   margin: 10px auto;
   padding: 10px;
-  border-radius: 2rem;
+  border-radius: 1rem;
   background: #333;
 }
