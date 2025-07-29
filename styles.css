@@ -27,20 +27,27 @@ input, button {
   color: #ddd;
   padding: 5px;
   margin: 2px;
-  border: 2px #ddd solid;
-  background: transparent;
+  border: none;
+  border-radius: 1rem;
+  background-color: #333;
   box-shadow: none;
 }
 button {
   cursor: pointer;
+  border-radius: 0.5rem;
   transition: background 250ms;
 }
 button:hover {
   background-color: #444;
 }
 
-row-input {
+row {
   direction: row;
+}
+.row {
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
 }
 
 .query {
