@@ -2,7 +2,7 @@
 .disclaimer {
   display: none;
 }
-* {
+*:not(button) {
   transition: none !important;
 }
 body {
@@ -25,12 +25,13 @@ a {
 input, button {
   font-family: Lexend, Arial, sans-serif;
   color: #ddd;
-  padding: 5px;
-  margin: 2px;
+  padding: 8px;
   border: none;
-  border-radius: 1rem;
   background-color: #333;
   box-shadow: none;
+}
+input {
+  border-radius: 1rem;
 }
 button {
   cursor: pointer;
