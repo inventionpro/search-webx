@@ -12,6 +12,7 @@ body {
   width: 50dvw;
   min-width: min(500px, 100dvw);
   margin: auto;
+  padding: 0px;
   font-family: Lexend, Arial, sans-serif;
   color: #ddd;
   background-color: #181818;
