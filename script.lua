@@ -34,4 +34,10 @@ get('query').on_submit(function()
   search()
 end)
 
+if window ~= nil then
+  if window.query.q ~= nil then
+    get('query').set_contents(window.query.q)
+  end
+end
+
 search()
