@@ -1,8 +1,10 @@
+local modern = 'true'
+
 function search()
   local query = get('query').get_contents()
   local str = string.gsub(query, "%+", "%%2B")
   local res = fetch({
-    url = "https://api.fsh.plus/buss?new=true&q=" .. str
+    url = "https://api.fsh.plus/buss?new=" .. modern .. "&q=" .. str
   })
   local html = ''
   if res.extra.type=='math' then
@@ -37,6 +39,9 @@ end)
 if window ~= nil then
   if window.query.q ~= nil then
     get('query').set_contents(window.query.q)
+  end
+  if string.find(window.location, 'timemachine') then
+    modern = 'false'
   end
 end
 
