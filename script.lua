@@ -7,19 +7,20 @@ function search()
     url = "https://api.fsh.plus/buss?new=" .. modern .. "&q=" .. str
   })
   local html = ''
-  if res.extra.type=='math' then
+  if res.extra.type=='none' then
+    html = ''
+  else if res.extra.type=='math' then
     html = '<div class="extra-math">' .. query .. ' = ' .. res.extra.value .. '</div>'
-  end
-  if res.extra.type=='dictionary' then
-    html = '<div class="extra-dictionary">' .. res.extra.value .. '</div>'
-  end
-  if res.extra.type=='translate' then
-    html = '<div class="extra-translate">' .. res.extra.value .. '</div>'
+  else
+    html = '<div class="extra-'+res.extra.type+'">' .. res.extra.value .. '</div>'
   end
   if window ~= nil then
     for i, s in ipairs(res.results) do
       html = html .. '<div style="--color:' .. s.color .. '">' .. (#s.favicon>0 and ('<img src="' .. s.favicon .. '" onerror="this.remove()">') or "") ..
         '<div><a href="buss://' .. s.url .. '">' .. (s.quality==2 and '⭐' or (s.quality==1 and '✔️' or '')) .. (#s.title>0 and s.title or s.url) .. '</a><p>' .. s.desc .. '</p></div></div>'
+    end
+    if modern=='false' then
+      get('run').set_contents('<img src="x" onerror="document.querySelectorAll(`a`).forEach(a=>a.onclick=(evt)=>{evt.stopPropagation();evt.preventDefault();let cat=document.querySlector(`#url,#toolbar_searchbar`);cat.value=cat.getAttribute(`men`);const enterEvent = new KeyboardEvent(`keydown`,{bubbles:true,cancelable:true,key:`Enter`,code:`Enter`,keyCode:13,which:13});cat.dispatchEvent(enterEvent);})" style="display:none">')
     end
   else
     for i, s in ipairs(res.results) do

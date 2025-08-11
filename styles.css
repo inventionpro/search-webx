@@ -101,3 +101,10 @@ img {
   border-radius: 1rem;
   background: #333;
 }
+
+run {
+  opacity: 0;
+}
+.run {
+  display: none;
+}
