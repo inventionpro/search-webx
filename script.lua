@@ -12,7 +12,7 @@ function search()
   elseif res.extra.type=='math' then
     html = '<div class="extra-math">' .. query .. ' = ' .. res.extra.value .. '</div>'
   else
-    html = '<div class="extra-'+res.extra.type+'">' .. res.extra.value .. '</div>'
+    html = '<div class="extra-' .. res.extra.type .. '">' .. res.extra.value .. '</div>'
   end
   if window ~= nil then
     for i, s in ipairs(res.results) do
@@ -47,4 +47,5 @@ if window ~= nil then
 end
 
 search()
+
 
