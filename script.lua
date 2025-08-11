@@ -9,7 +9,7 @@ function search()
   local html = ''
   if res.extra.type=='none' then
     html = ''
-  else if res.extra.type=='math' then
+  elseif res.extra.type=='math' then
     html = '<div class="extra-math">' .. query .. ' = ' .. res.extra.value .. '</div>'
   else
     html = '<div class="extra-'+res.extra.type+'">' .. res.extra.value .. '</div>'
@@ -47,3 +47,4 @@ if window ~= nil then
 end
 
 search()
+
