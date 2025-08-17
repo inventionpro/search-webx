@@ -16,6 +16,7 @@ body {
   font-family: Lexend, Arial, sans-serif;
   color: #ddd;
   background-color: #181818;
+  background-color: -wxv-browser-theme-color;
 }
 h1, h2, h3, h4, h5, h6, p, a, ul, ol {
   margin: 0px;
