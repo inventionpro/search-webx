@@ -1,4 +1,6 @@
 body {
   background-color: #181818;
-  background-color: -wxv-browser-theme-color;
+  background-color: -wxv-browser-theme-bg;
+  color: #ddd;
+  color: -wxv-browser-theme-txt;
 }
