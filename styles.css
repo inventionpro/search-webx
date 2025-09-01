@@ -66,8 +66,10 @@ row {
   box-sizing: border-box;
 }
 .results > div {
+  width: 100%;
   position: relative;
   display: flex;
+  flex-direction: row;
   gap: 5px;
   align-items: center;
 }
